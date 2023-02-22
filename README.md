@@ -2,9 +2,9 @@
 Pretty simple example about Job System.
 
 ## Usage
--Create an empty GameObject
--Add "WavesJobber.cs" script to GameObject
--Add MeshRenderer Component to GameObject
+- Create an empty GameObject
+- Add "WavesJobber.cs" script to GameObject
+- Add MeshRenderer Component to GameObject
 That's all.
 
 Now you can edit **ocean dimension** and add new **noise layer**
