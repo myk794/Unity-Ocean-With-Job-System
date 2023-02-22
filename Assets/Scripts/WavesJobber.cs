@@ -11,12 +11,18 @@ using UnityEngine.Video;
 
 public class WavesJobber : MonoBehaviour
 {
-    public bool _useJobSystem;
+    [Header("Ocean Dimension")]
+    public int width = 10;
+    public int length = 10;
+    
+    [Header("Job System Use")]
+    public bool _useJobSystem =true;
     private MeshFilter MeshFilter;
+    
+    [Header("Noise Layers")]
     [SerializeField] private List<PerlinNoiseLayer> _perlinNoiseLayers;
     
-    public int Dimension = 10;
-    public float UVScale = 2f;
+    private float UVScale = 2f;
     
     protected Mesh Mesh;
     void Start()
@@ -98,11 +104,11 @@ public class WavesJobber : MonoBehaviour
     //----------------------
     private Vector3[] GenerateVerts()
     {
-        var verts = new Vector3[(Dimension + 1) * (Dimension + 1)];
+        var verts = new Vector3[(width + 1) * (length + 1)];
 
         //equaly distributed verts
-        for(int x = 0; x <= Dimension; x++)
-        for(int z = 0; z <= Dimension; z++)
+        for(int x = 0; x <= width; x++)
+        for(int z = 0; z <= length; z++)
             verts[index(x, z)] = new Vector3(x, 0, z);
 
         return verts;
@@ -113,9 +119,9 @@ public class WavesJobber : MonoBehaviour
         var tries = new int[Mesh.vertices.Length * 6];
 
         //two triangles are one tile
-        for(int x = 0; x < Dimension; x++)
+        for(int x = 0; x < width; x++)
         {
-            for(int z = 0; z < Dimension; z++)
+            for(int z = 0; z < length; z++)
             {
                 tries[index(x, z) * 6 + 0] = index(x, z);
                 tries[index(x, z) * 6 + 1] = index(x + 1, z + 1);
@@ -134,9 +140,9 @@ public class WavesJobber : MonoBehaviour
         var uvs = new Vector2[Mesh.vertices.Length];
 
         //always set one uv over n tiles than flip the uv and set it again
-        for (int x = 0; x <= Dimension; x++)
+        for (int x = 0; x <= width; x++)
         {
-            for (int z = 0; z <= Dimension; z++)
+            for (int z = 0; z <= length; z++)
             {
                 var vec = new Vector2((x / UVScale) % 2, (z / UVScale) % 2);
                 uvs[index(x, z)] = new Vector2(vec.x <= 1 ? vec.x : 2 - vec.x, vec.y <= 1 ? vec.y : 2 - vec.y);
@@ -148,6 +154,6 @@ public class WavesJobber : MonoBehaviour
 
     private int index(int x, int z)
     {
-        return x * (Dimension + 1) + z;
+        return x * (length + 1) + z;
     }
 }

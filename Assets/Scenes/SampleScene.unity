@@ -331,22 +331,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540dc37e4faca8147b6610edb3ef615f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useJobSystem: 0
+  width: 50
+  length: 50
+  _useJobSystem: 1
   _perlinNoiseLayers:
   - Scale: 0.004
     Speed: 0.1
-    Height: 5
+    Height: 0.2
   - Scale: 0.02
     Speed: 0.1
-    Height: 0.5
+    Height: 0.1
   - Scale: 1.4
     Speed: 1
     Height: 0.06
   - Scale: 1.4
     Speed: -1
     Height: 0.4
-  Dimension: 200
-  UVScale: 2
 --- !u!4 &1159679326
 Transform:
   m_ObjectHideFlags: 0
