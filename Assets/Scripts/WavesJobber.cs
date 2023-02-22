@@ -16,7 +16,7 @@ public class WavesJobber : MonoBehaviour
     public int length = 10;
     
     [Header("Job System Use")]
-    public bool _useJobSystem =true;
+    public bool _useJobSystem;
     private MeshFilter MeshFilter;
     
     [Header("Noise Layers")]

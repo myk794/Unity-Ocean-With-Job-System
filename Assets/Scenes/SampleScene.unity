@@ -331,9 +331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540dc37e4faca8147b6610edb3ef615f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 50
-  length: 50
-  _useJobSystem: 1
+  width: 200
+  length: 200
+  _useJobSystem: 0
   _perlinNoiseLayers:
   - Scale: 0.004
     Speed: 0.1
