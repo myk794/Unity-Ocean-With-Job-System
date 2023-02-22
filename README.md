@@ -4,6 +4,11 @@ Pretty simple example about Job System.
 ![project overview](https://user-images.githubusercontent.com/26025564/220774109-7eed59cb-ccc8-489c-88f0-3462176b88ad.gif)
 
 
+## Package Requirements
+- Unity.Mathematics
+- Unity.Burst
+- Unity.Jobs
+
 ## Usage
 - Create an empty GameObject.
 - Add "WavesJobber.cs" script to GameObject.
